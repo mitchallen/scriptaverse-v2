@@ -59,12 +59,16 @@ export function createScriptaverse(context = {}) {
             sceneManager.resize();
           }
     
+        /*
         let render = function() {
             requestAnimationFrame(render);
             sceneManager.step();
         }
-
         render();
+        */
+
+        // XR support
+        sceneManager.animate();
     }
 
     renderScene();

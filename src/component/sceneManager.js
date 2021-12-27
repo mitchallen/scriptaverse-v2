@@ -1,6 +1,8 @@
 
 import { createLogger } from "./logger.js";
 
+import { createButtonXR } from './buttonXR.js';
+
 // mport the icosahedron class factory
 import { IcosahedronFactory } from './icosahedron.js';
 
@@ -26,7 +28,16 @@ export function createSceneManager(context = {}) {
     var renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setClearColor(clear);
     renderer.setSize(window.innerWidth, window.innerHeight);
+    // [VR] Enable WebXR support
+    renderer.xr.enabled = true;
+
     document.body.appendChild(renderer.domElement);
+    document.body.appendChild(createButtonXR(renderer));
+
+    // Create a ThreeJS camera
+    var camera = new THREE.PerspectiveCamera(fov, aspectRatio, near, far);
+    let controls = new THREE.OrbitControls(camera, renderer.domElement);
+
 
     // Create a new ThreeJS scene
     var scene = new THREE.Scene();
@@ -53,11 +64,6 @@ export function createSceneManager(context = {}) {
 
     icosahedronOptions.forEach(options => scene.add(IcosahedronFactory.create(options)));
 
-    // 8. Create a ThreeJS camera
-    var camera = new THREE.PerspectiveCamera(fov, aspectRatio, near, far);
-    camera.position.z = 5; // Set camera position
-    let controls = new THREE.OrbitControls(camera, renderer.domElement);
-
     let busy = false;
 
     function loadNextScene() {
@@ -65,8 +71,6 @@ export function createSceneManager(context = {}) {
         if (busy) return;
 
         busy = true;
-
-
 
         let indicator = scene.getObjectByName(LOAD_INDICATOR);
 
@@ -122,6 +126,7 @@ export function createSceneManager(context = {}) {
 
         let rootNode = new THREE.Group();
         rootNode.name = ROOT_NAME;
+        rootNode.position.set( 0, 1.6, -5 );
         scene.add(rootNode);
 
         let nodeList = getNodes();
@@ -316,6 +321,10 @@ export function createSceneManager(context = {}) {
             renderer.shadowMap.enabled = true;
 
             renderer.render(scene, camera);
+        },
+
+        animate: function() {
+            renderer.setAnimationLoop(this.step);
         }
     };
 

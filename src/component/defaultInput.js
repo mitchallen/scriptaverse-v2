@@ -1,6 +1,4 @@
 
-
-
 export const defaultInput = {
     "scenes": [
         {
@@ -13,6 +11,7 @@ export const defaultInput = {
                     "mimeType": "model/gltf-binary",
                     "instances": [
                         {
+                            "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
                             "scale": { "x": 0.5, "y": 0.5, "z": 0.5 }
                         }
                     ] 
