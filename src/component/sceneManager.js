@@ -3,6 +3,13 @@ import { createLogger } from "./logger.js";
 
 import { createButtonXR } from './buttonXR.js';
 
+import {  
+    creatControllerXR,
+    CONTROLLER_PROFILE,
+    OCULUS_GO,
+    OCULUS_QUEST
+} from './controllerXR.js';
+
 // mport the icosahedron class factory
 import { IcosahedronFactory } from './icosahedron.js';
 
@@ -36,8 +43,16 @@ export function createSceneManager(context = {}) {
 
     // Create a ThreeJS camera
     var camera = new THREE.PerspectiveCamera(fov, aspectRatio, near, far);
+
+    // desktop orbit controls
     let controls = new THREE.OrbitControls(camera, renderer.domElement);
 
+    // XR controls
+    let xrCtrl = creatControllerXR();
+
+    xrCtrl.connect({
+        xr: renderer.xr,
+    });
 
     // Create a new ThreeJS scene
     var scene = new THREE.Scene();
@@ -278,12 +293,13 @@ export function createSceneManager(context = {}) {
 
     loadNextScene();
 
-    document.getElementById('btnNext').addEventListener('click', function () {
+    document.getElementById('btnRandom').addEventListener('click', function () {
 
         loadNextScene()
 
     });
 
+    let triggerPressed = false;
 
     // Define a scene with methods to return
     var modelScene = {
@@ -297,6 +313,32 @@ export function createSceneManager(context = {}) {
 
         // 12. Define a method to be called when the scene is rendered
         step: function () {
+
+            let controller = xrCtrl.getState();
+
+            function onNextScene(btnPressed) {
+                if( btnPressed ) {
+                    if( ! triggerPressed ) {
+                        triggerPressed = true;
+                        loadNextScene();
+                    }
+                } else {
+                    triggerPressed = false;
+                } 
+            }
+
+            if( controller.profile === CONTROLLER_PROFILE.OCULUS_TOUCH ) {
+                onNextScene( controller.right.pressed[OCULUS_QUEST.INDEX_TRIGGER ]);
+            }
+
+            if( controller.profile === CONTROLLER_PROFILE.OCULUS_GO ) {
+                onNextScene(
+                    // button in emulator
+                    controller.left.pressed[OCULUS_GO.TOUCHPAD_CLICK]
+                    || controller.right.pressed[OCULUS_GO.TOUCHPAD_CLICK]
+                );
+            }
+
             scene.traverse(function (node) {
                 if ((node.name === LOAD_INDICATOR || node.name === ERROR_INDICATOR) && node.visible) {
                     let speedX = 0.1;
