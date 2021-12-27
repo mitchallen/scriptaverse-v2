@@ -1,7 +1,7 @@
 {
   "name": "scriptaverse-v2",
   "version": "1.0.0",
-  "description": "decentralized immersion",
+  "description": "decentralized WebXR site",
   "main": "src/index.html",
   "homepage": ".",
   "scripts": {
