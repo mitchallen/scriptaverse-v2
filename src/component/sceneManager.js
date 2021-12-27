@@ -45,6 +45,7 @@ export function createSceneManager(context = {}) {
     var camera = new THREE.PerspectiveCamera(fov, aspectRatio, near, far);
 
     // desktop orbit controls
+    // TODO - orbit controls not working when setup for WebXR
     let controls = new THREE.OrbitControls(camera, renderer.domElement);
 
     // XR controls
