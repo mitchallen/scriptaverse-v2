@@ -1,0 +1,15 @@
+{
+  "name": "scriptaverse-v2",
+  "version": "1.0.0",
+  "description": "decentralized immersion",
+  "main": "src/index.html",
+  "homepage": ".",
+  "scripts": {
+    "start": "open http://localhost:8000",
+    "mac:server": "cd src; python -m SimpleHTTPServer $PORT || 8000",
+    "inuse": "lsof -i :8000"
+  },
+  "keywords": ["xr", "webxr", "vr", "virtual reality", "metaverse"],
+  "author": "Mitch Allen (mitchallen.com)",
+  "license": "MIT"
+}

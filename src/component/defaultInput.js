@@ -1,0 +1,78 @@
+
+
+
+export const defaultInput = {
+    "scenes": [
+        {
+            "title": "marble",
+            "hide": false,
+            "nodes": [
+                {
+                    "cid": "QmUoZ3dZYBgcr8nfirkVcttUCpgJzuKTLMokHhfcg6nEwY",
+                    "name": "Marble Alpha",
+                    "mimeType": "model/gltf-binary",
+                    "instances": [
+                        {
+                            "scale": { "x": 0.5, "y": 0.5, "z": 0.5 }
+                        }
+                    ] 
+                }
+            ]
+        },
+        {
+            "title": "marble satellite",
+            "hide": false,
+            "nodes": [
+                {
+                    "cid": "QmY49HSawcsytkvNMN1X3FcSA6MpsCaXWvrEcKj1WLJjiE",
+                    "name": "Partial Satellite",
+                    "mimeType": "model/gltf-binary",
+                    "instances": [
+                        {
+                            "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+                        }
+                    ]
+                    
+                },
+                {
+                    "cid": "QmUoZ3dZYBgcr8nfirkVcttUCpgJzuKTLMokHhfcg6nEwY",
+                    "name": "Marble Alpha",
+                    "mimeType": "model/gltf-binary",
+                    "instances": [
+                        {
+                            "scale": { "x": 0.5, "y": 0.5, "z": 0.5 }
+                        }
+                    ] 
+                }
+            ]
+        },
+        {
+            "title": "gray beta maze cube",
+            "hide": false,
+            "backgroundColor": "#000000",
+            "nodes": [
+                {
+                    "cid": "QmP7HVFegqa6U1YVEHXURU7UR7ze8MwZnuHrwTv45dp9zo",
+                    "name": "Gray Beta",
+                    "mimeType": "image/png",
+                    "instances": [
+                        { 
+                            "scale": { "x": 12.0, "y": 3.375, "z": 0.0 },
+                            "position": { "x": 0.0, "y": 0.0, "z": -2.0 }
+                        }
+                    ]
+                },
+                {
+                    "cid": "Qmck1wi5hCErdreYLzjYKn6SCuRtHX7Gv4AFGXJe3qRogo",
+                    "name": "Maze Cube 3x3x3 Alpha",
+                    "mimeType": "model/gltf-binary",
+                    "instances": [
+                        {
+                            "scale": { "x": 0.5, "y": 0.5, "z": 0.5 }
+                        }
+                    ]    
+                }
+            ]
+        },
+    ]
+}
