@@ -13,11 +13,23 @@ import {
 // mport the icosahedron class factory
 import { IcosahedronFactory } from './icosahedron.js';
 
-const ROOT_NAME = 'root'
+const ROOT_NAME = 'root';
 
 export function createSceneManager(context = {}) {
 
     let log = createLogger(context);
+
+    let isInXR = false;
+
+    context.onSessionStarted = function() { 
+        log.info('### VR SESSION STARTED');
+        isInXR = true; 
+    };
+
+    context.onSessionEnded = function() { 
+        log.info('--- VR SESSION ENDED');
+        isInXR = false; 
+    };
 
     // Setup default values or use context
     let {
@@ -39,7 +51,7 @@ export function createSceneManager(context = {}) {
     renderer.xr.enabled = true;
 
     document.body.appendChild(renderer.domElement);
-    document.body.appendChild(createButtonXR(renderer));
+    document.body.appendChild(createButtonXR(renderer, context));
 
     // Create a ThreeJS camera
     var camera = new THREE.PerspectiveCamera(fov, aspectRatio, near, far);
@@ -100,7 +112,7 @@ export function createSceneManager(context = {}) {
         }
 
         if (scenes.length === 0) {
-            console.warn('No scenes found');
+            log.warn('No scenes found');
             let errorIndicator = scene.getObjectByName(ERROR_INDICATOR);
             if (errorIndicator) {
                 errorIndicator.visible = true;
@@ -142,7 +154,7 @@ export function createSceneManager(context = {}) {
 
         let rootNode = new THREE.Group();
         rootNode.name = ROOT_NAME;
-        rootNode.position.set( 0, 1.6, -5 );
+
         scene.add(rootNode);
 
         let nodeList = getNodes();
@@ -157,7 +169,7 @@ export function createSceneManager(context = {}) {
                 // scale = { x: 1, y: 1, z: 1 },
             } = nodeList[i];
 
-            console.log(mimeType, filepath);
+            // log.log(mimeType, filepath);
 
             if (mimeType === 'x-node/group') {
 
@@ -178,15 +190,15 @@ export function createSceneManager(context = {}) {
                         childNode.name = name;
                         childNode.scale.set(scale.x, scale.y, scale.z);
                         childNode.position.set(position.x, position.y, position.z);
-                        console.log(name, "group has a parent: ", parent);
+                        // log.log(`${name} group has a parent: ${parent}`);
                         if (parent) {
                             // find parent
                             let pNode = scene.getObjectByName(parent);
                             if (pNode) {
-                                console.log("Adding ", name, "to: ", parent);
+                                // log.log(`Adding ${name} to: ${parent}`);
                                 pNode.add(childNode);
                             } else {
-                                console.log("Could not find parent: ", parent, "for: ", name);
+                                // log.log(`Could not find parent: ${parent} for: ${name}`);
                             }
                         } else {
                             rootNode.add(childNode);
@@ -264,18 +276,18 @@ export function createSceneManager(context = {}) {
                         clone.scale.set(scale.x, scale.y, scale.z);
                         clone.position.set(position.x, position.y, position.z);
                         clone.visible = true; // TODO - get from JSON def
-                        console.log("PARENT: ", parent);
+                        // log.log(`PARENT: ${parent}`);
                         if (parent) {
                             // find parent
                             let pNode = scene.getObjectByName(parent);
                             if (pNode) {
-                                console.log("GLB: ", clone.name, parent);
+                                // log.log(`GLB: ${clone.name}  ${parent}`);
                                 pNode.add(clone);
                             } else {
-                                console.warn("Could not find parent: ", parent);
+                                log.warn(`Could not find parent: ${parent}`);
                             }
                         } else {
-                            console.log("GLB: ", clone.name, "[root]");
+                            // log.log(`GLB: ${clone.name} [root]`);
                             rootNode.add(clone);
                         }
                     }
@@ -341,6 +353,15 @@ export function createSceneManager(context = {}) {
             }
 
             scene.traverse(function (node) {
+
+                if( node.name === ROOT_NAME ) {
+                    if( isInXR ) {
+                        node.position.set( 0, 1.6, -5 );
+                    } else {
+                        node.position.set( 0, 0, -5 );
+                    }
+                }
+
                 if ((node.name === LOAD_INDICATOR || node.name === ERROR_INDICATOR) && node.visible) {
                     let speedX = 0.1;
                     let speedY = 0.2;

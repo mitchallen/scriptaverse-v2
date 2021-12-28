@@ -1,5 +1,12 @@
-export function createButtonXR(renderer) {
-    console.log('createButtonXE');
+
+import { createLogger } from "./logger.js";
+
+export function createButtonXR(renderer, context = {}) {
+
+    let log = createLogger(context);
+
+    log.log('createButtonXR');
+    
     const button = document.createElement('button');
 
     function showEnterVR( /*device*/) {
@@ -9,12 +16,18 @@ export function createButtonXR(renderer) {
             renderer.xr.setSession(session);
             button.textContent = 'EXIT VR';
             currentSession = session;
+            if( context.onSessionStarted ) {
+                context.onSessionStarted();
+            }
         }
 
         function onSessionEnded( /*event*/) {
             currentSession.removeEventListener('end', onSessionEnded);
             button.textContent = 'ENTER VR';
             currentSession = null;
+            if( context.onSessionEnded ) {
+                context.onSessionEnded();
+            }
         }
 
         button.style.display = '';

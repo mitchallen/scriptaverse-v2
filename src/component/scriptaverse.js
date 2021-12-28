@@ -12,7 +12,9 @@ export function createScriptaverse(context = {}) {
         name = 'scriptaverse',
     } = context;
 
-    let log = createLogger({verbose, name});
+    context = {...context, verbose, name};
+
+    let log = createLogger(context);
 
     function parseInput() {
 
@@ -51,7 +53,7 @@ export function createScriptaverse(context = {}) {
 
     function renderScene() {
 
-        let sceneManager = createSceneManager(context);
+        let sceneManager = createSceneManager( context );
 
         window.addEventListener('resize', onWindowResize, false);
     
@@ -59,13 +61,11 @@ export function createScriptaverse(context = {}) {
             sceneManager.resize();
           }
     
-        /*
-        let render = function() {
-            requestAnimationFrame(render);
-            sceneManager.step();
-        }
-        render();
-        */
+        // let render = function() {
+        //     requestAnimationFrame(render);
+        //     sceneManager.step();
+        // }
+        // render();
 
         // XR support
         sceneManager.animate();
