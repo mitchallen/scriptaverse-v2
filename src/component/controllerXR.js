@@ -6,6 +6,8 @@
  *  https://github.com/MozillaReality/WebXR-emulator-extension/issues/237
  */
 
+import { createLogger } from "./logger.js";
+
 export const CONTROLLER_PROFILE = {
     OCULUS_GO: 'oculus-go',
     OCULUS_TOUCH: 'oculus-touch'
@@ -46,12 +48,16 @@ export function creatControllerXR() {
 
     function connect(context = {}) {
 
+        let log = createLogger({ name: 'controller connect' });
+
         let {
             xr = null,
         } = context;
 
         if (!xr) {
-            throw new Error('.create requires xr');
+            const eMsg = '.create requires xr';
+            log.error(eMsg);
+            throw new Error(eMsg);
         }
 
         let c0 = xr.getController(0);
@@ -76,7 +82,7 @@ export function creatControllerXR() {
     // Get the current state of the buttons
 
     function getState(context = {}) {
-        
+
         // Return object to be filled in below with current state
 
         let controller = {

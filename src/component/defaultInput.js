@@ -4,6 +4,26 @@ export const defaultInput = {
         {
             "title": "marble",
             "hide": false,
+            "teleport": [
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -1.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 1.0, "z": -2.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": -1.0, "z": -3.0 },
+                },
+                {
+                    "position": { "x": 1.0, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+                }
+            ],
             "nodes": [
                 {
                     "cid": "QmUoZ3dZYBgcr8nfirkVcttUCpgJzuKTLMokHhfcg6nEwY",
@@ -21,6 +41,26 @@ export const defaultInput = {
         {
             "title": "marble satellite",
             "hide": false,
+            "teleport": [
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -1.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 1.0, "z": -2.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": -1.0, "z": -3.0 },
+                },
+                {
+                    "position": { "x": 1.0, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+                }
+            ],
             "nodes": [
                 {
                     "cid": "QmY49HSawcsytkvNMN1X3FcSA6MpsCaXWvrEcKj1WLJjiE",
@@ -49,6 +89,26 @@ export const defaultInput = {
             "title": "gray beta maze cube",
             "hide": false,
             "backgroundColor": "#000000",
+            "teleport": [
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -1.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 1.0, "z": -2.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": -1.0, "z": -3.0 },
+                },
+                {
+                    "position": { "x": 1.0, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+                }
+            ],
             "nodes": [
                 {
                     "cid": "QmP7HVFegqa6U1YVEHXURU7UR7ze8MwZnuHrwTv45dp9zo",

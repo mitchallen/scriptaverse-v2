@@ -15,6 +15,7 @@ export const scriptaverseSchema = {
                     "hide": { "type": ["boolean", "null"] },
                     "title": { "type": ["string", "null"] },
                     "backgroundColor": { "type": ["string", "null"] },
+                    "teleport": { "$ref": "#/$defs/teleport" },
                     "nodes": { "$ref": "#/$defs/nodes" }
                 },
                 "additionalProperties": false
@@ -47,6 +48,18 @@ export const scriptaverseSchema = {
                     "name": { "type": ["string", "null"] },
                     "parent": { "type": ["string", "null"] },
                     "scale": { "$ref": "#/$defs/vector3" },
+                    "position": { "$ref": "#/$defs/vector3" },
+                },
+                "additionalProperties": false
+            }
+        },
+        "teleport": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": { "type": ["string", "null"] },
                     "position": { "$ref": "#/$defs/vector3" },
                 },
                 "additionalProperties": false

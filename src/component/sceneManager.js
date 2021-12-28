@@ -3,7 +3,9 @@ import { createLogger } from "./logger.js";
 
 import { createButtonXR } from './buttonXR.js';
 
-import {  
+import { createZeroBasedCounter } from './counter.js';
+
+import {
     creatControllerXR,
     CONTROLLER_PROFILE,
     OCULUS_GO,
@@ -21,15 +23,9 @@ export function createSceneManager(context = {}) {
 
     let isInXR = false;
 
-    context.onSessionStarted = function() { 
-        log.info('### VR SESSION STARTED');
-        isInXR = true; 
-    };
+    let teleportMap = [];
+    let teleportCounter = createZeroBasedCounter({ limit: 0 });
 
-    context.onSessionEnded = function() { 
-        log.info('--- VR SESSION ENDED');
-        isInXR = false; 
-    };
 
     // Setup default values or use context
     let {
@@ -54,11 +50,29 @@ export function createSceneManager(context = {}) {
     document.body.appendChild(createButtonXR(renderer, context));
 
     // Create a ThreeJS camera
-    var camera = new THREE.PerspectiveCamera(fov, aspectRatio, near, far);
+    let camera = new THREE.PerspectiveCamera(fov, aspectRatio, near, far);
 
     // desktop orbit controls
     // TODO - orbit controls not working when setup for WebXR
     let controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+    context.onSessionStarted = function () {
+        log.info('### VR SESSION STARTED');
+        isInXR = true;
+    };
+
+    context.onSessionEnded = function () {
+        log.info('--- VR SESSION ENDED');
+        isInXR = false;
+    };
+
+    // Create a new ThreeJS scene
+    let scene = new THREE.Scene();
+    scene.background = new THREE.Color(clear);
+
+    const dolly = new THREE.Group();
+    dolly.name = 'dolly';
+    dolly.add(camera);
 
     // XR controls
     let xrCtrl = creatControllerXR();
@@ -66,10 +80,6 @@ export function createSceneManager(context = {}) {
     xrCtrl.connect({
         xr: renderer.xr,
     });
-
-    // Create a new ThreeJS scene
-    var scene = new THREE.Scene();
-    scene.background = new THREE.Color(clear);
 
     const light = new THREE.SpotLight(0xffa95c, 4);
     light.position.set(-100, 100, 100);
@@ -94,11 +104,15 @@ export function createSceneManager(context = {}) {
 
     let busy = false;
 
-    function loadNextScene() {
+    let sceneCounter = createZeroBasedCounter( { limit: scenes.length });
+
+    function loadNextScene( random = false ) {
 
         if (busy) return;
 
         busy = true;
+
+        dolly.position.set( 0.0, 0.0, 0.0 );
 
         let indicator = scene.getObjectByName(LOAD_INDICATOR);
 
@@ -123,7 +137,7 @@ export function createSceneManager(context = {}) {
 
         let pickOne = (list) => list[Math.floor(Math.random() * list.length)];
 
-        let currentScene = pickOne(scenes);
+        let currentScene = random ? pickOne(scenes) : scenes[sceneCounter.increment()];
 
         // See: https://luke.lol/ipfs.php
         // const IPFS_GATEWAY = 'https://cloudflare-ipfs.com/ipfs/'; // sometime fails 
@@ -131,6 +145,17 @@ export function createSceneManager(context = {}) {
         const IPFS_GATEWAY = 'https://ipfs.infura.io/ipfs/';
 
         const ipfsPath = (hash) => `${IPFS_GATEWAY}${hash}`;
+
+        // Teleport
+
+        teleportMap = currentScene.teleport ? currentScene.teleport : [];
+
+        teleportCounter = createZeroBasedCounter({ limit: teleportMap.length });
+
+        log.info("### TELEPORT MAP")
+        log.json(teleportMap);
+
+        // Nodes
 
         function getNodes() {
             let nodes = currentScene.nodes;
@@ -156,6 +181,7 @@ export function createSceneManager(context = {}) {
         rootNode.name = ROOT_NAME;
 
         scene.add(rootNode);
+        scene.add(dolly);
 
         let nodeList = getNodes();
 
@@ -307,12 +333,29 @@ export function createSceneManager(context = {}) {
     loadNextScene();
 
     document.getElementById('btnRandom').addEventListener('click', function () {
-
-        loadNextScene()
-
+        loadNextScene( true );
     });
 
-    let triggerPressed = false;
+    document.getElementById('btnNext').addEventListener('click', function () {
+        loadNextScene( false );
+    });
+
+    function teleport() {
+        log.info("### TELEPORTING! ... ###")
+        // teleport();
+        let target = teleportMap[teleportCounter.value].position;
+        if( target ) {
+            dolly.position.set( target.x, target.y, target.z );
+        }
+        teleportCounter.increment();
+    }
+
+    document.getElementById('btnTeleport').addEventListener('click', function () {
+        teleport();
+    });
+
+    let pressedNextScene = false;
+    let pressedTeleport = false;
 
     // Define a scene with methods to return
     var modelScene = {
@@ -330,37 +373,59 @@ export function createSceneManager(context = {}) {
             let controller = xrCtrl.getState();
 
             function onNextScene(btnPressed) {
-                if( btnPressed ) {
-                    if( ! triggerPressed ) {
-                        triggerPressed = true;
-                        loadNextScene();
+                if (btnPressed) {
+                    if (!pressedNextScene) {
+                        pressedNextScene = true;
+                        loadNextScene( false );
                     }
                 } else {
-                    triggerPressed = false;
-                } 
+                    pressedNextScene = false;
+                }
             }
 
-            if( controller.profile === CONTROLLER_PROFILE.OCULUS_TOUCH ) {
-                onNextScene( controller.right.pressed[OCULUS_QUEST.INDEX_TRIGGER ]);
+            function onTeleport(btnPressed) {
+                if (btnPressed) {
+                    // log.info("### ON TELEPORT ###");
+                    if (!pressedTeleport) {
+                        pressedTeleport = true;
+                        teleport();
+                    }
+                } else {
+                    pressedTeleport = false;
+                }
             }
 
-            if( controller.profile === CONTROLLER_PROFILE.OCULUS_GO ) {
+            if (controller.profile === CONTROLLER_PROFILE.OCULUS_TOUCH) {
+                onNextScene(controller.right.pressed[OCULUS_QUEST.INDEX_TRIGGER]);
+                onTeleport(controller.left.pressed[OCULUS_QUEST.INDEX_TRIGGER]);
+            }
+
+
+            if (controller.profile === CONTROLLER_PROFILE.OCULUS_GO) {
                 onNextScene(
                     // button in emulator
                     controller.left.pressed[OCULUS_GO.TOUCHPAD_CLICK]
                     || controller.right.pressed[OCULUS_GO.TOUCHPAD_CLICK]
                 );
+                onTeleport(
+                    controller.left.pressed[OCULUS_GO.INDEX_TRIGGER]
+                    || controller.right.pressed[OCULUS_GO.INDEX_TRIGGER]
+                );
             }
 
             scene.traverse(function (node) {
 
-                if( node.name === ROOT_NAME ) {
-                    if( isInXR ) {
-                        node.position.set( 0, 1.6, -5 );
+                if (node.name === ROOT_NAME) {
+                    if (isInXR) {
+                        node.position.set(0, 1.6, -5);
                     } else {
-                        node.position.set( 0, 0, -5 );
+                        node.position.set(0, 0, -5);
                     }
                 }
+
+                // if( node.name === 'dolly') {
+                //     node.position.z += 0.01;
+                // }
 
                 if ((node.name === LOAD_INDICATOR || node.name === ERROR_INDICATOR) && node.visible) {
                     let speedX = 0.1;
@@ -387,7 +452,7 @@ export function createSceneManager(context = {}) {
             renderer.render(scene, camera);
         },
 
-        animate: function() {
+        animate: function () {
             renderer.setAnimationLoop(this.step);
         }
     };
