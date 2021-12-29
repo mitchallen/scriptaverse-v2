@@ -109,6 +109,7 @@ export function createSceneManager(context = {}) {
         busy = true;
 
         dolly.position.set( 0.0, 0.0, 0.0 );
+        dolly.rotation.set( 0.0, 0.0, 0.0 );
 
         let indicator = scene.getObjectByName(LOAD_INDICATOR);
 
