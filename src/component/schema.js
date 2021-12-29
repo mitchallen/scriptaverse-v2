@@ -49,6 +49,7 @@ export const scriptaverseSchema = {
                     "parent": { "type": ["string", "null"] },
                     "scale": { "$ref": "#/$defs/vector3" },
                     "position": { "$ref": "#/$defs/vector3" },
+                    "rotation": { "$ref": "#/$defs/vector3" },
                 },
                 "additionalProperties": false
             }

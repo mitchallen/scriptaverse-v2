@@ -86,33 +86,37 @@ export const defaultInput = {
             ]
         },
         {
-            "title": "Maze 7x7x7 alpha",
+            "title": "Maze 3x3x3 alpha x 2",
             "hide": false,
             "teleport": [
                 {
+                    "name": "T1",
                     "position": { "x": 0.0, "y": -3.0, "z": -5.0 },
                     "rotation": { "x": 1.5707963268, "y": 0.0, "z": 0.0 },
                 },
                 {
+                    "name": "T2",
                     "position": { "x": 0.0, "y": 3.0, "z": -5.0 },
                     "rotation": { "x": -1.5707963268, "y": 0.0, "z": 0.0 },
                 },
                 {
+                    "name": "T3",
                     "position": { "x": 0.0, "y": 0.0, "z": -10.0 },
                     "rotation": { "x": 0.0, "y": 3.14159265359, "z": 0.0 },
                 },
                 {
+                    "name": "T4",
                     "position": { "x": 0.0, "y": 0.0, "z": 0.0 },  
                 }
             ],
             "nodes": [
                 {
-                    "cid": "QmXG8RCGGCdM2THHNfgYFLfMLkzmr6drkwmvhW8KjbDp1X",
-                    "name": "Maze 7x7x7 Alphs",
+                    "cid": "Qmck1wi5hCErdreYLzjYKn6SCuRtHX7Gv4AFGXJe3qRogo",
+                    "name": "Maze Cube 3x3x3 Alpha",
                     "mimeType": "model/gltf-binary",
                     "instances": [
                         {
-                            "scale": { "x": 0.1, "y": 0.1, "z": 0.1 }
+                            "scale": { "x": 0.4, "y": 0.4, "z": 0.4 },
                         }
                     ]
                     
@@ -124,7 +128,8 @@ export const defaultInput = {
                     "instances": [
                         {
                             "position": { "x": 2.0, "y": 2.0, "z": -2.0 },
-                            "scale": { "x": 0.2, "y": 0.2, "z": 0.2 }
+                            "scale": { "x": 0.2, "y": 0.2, "z": 0.2 },
+                            "rotation": { "x": 0.785398, "y": 0.785398, "z":  0.785398 },
                         }
                     ]    
                 }

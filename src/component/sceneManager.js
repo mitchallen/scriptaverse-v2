@@ -200,6 +200,7 @@ export function createSceneManager(context = {}) {
                         name = 'node',  // random ?
                         position = { x: 0, y: 0, z: 0 },
                         scale = { x: 1, y: 1, z: 1 },
+                        rotation = { x: 0, y: 0, z: 0 },
                         parent = undefined,
                     } = instances[i];
 
@@ -212,6 +213,7 @@ export function createSceneManager(context = {}) {
                         childNode.name = name;
                         childNode.scale.set(scale.x, scale.y, scale.z);
                         childNode.position.set(position.x, position.y, position.z);
+                        childNode.rotation.set(rotation.x, rotation.y, rotation.z);
                         // log.log(`${name} group has a parent: ${parent}`);
                         if (parent) {
                             // find parent
@@ -252,12 +254,14 @@ export function createSceneManager(context = {}) {
                                 name = "imageNode",
                                 position = { x: 0, y: 0, z: 0 },
                                 scale = { x: 1, y: 1, z: 1 },
+                                rotation = { x: 0, y: 0, z: 0 },
                                 parent = undefined,
                             } = instances[i];
                             let clone = sprite.clone();
                             clone.name = name;
                             clone.scale.set(scale.x, scale.y, 1);
                             clone.position.set(position.x, position.y, position.z);
+                            clone.rotation.set(rotation.x, rotation.y, rotation.z);
                             clone.visible = true;
                             if (parent) {
                                 // find parent
@@ -291,12 +295,14 @@ export function createSceneManager(context = {}) {
                             name = "glbNode",
                             position = { x: 0, y: 0, z: 0 },
                             scale = { x: 1, y: 1, z: 1 },
+                            rotation = { x: 0, y: 0, z: 0 },
                             parent = undefined,
                         } = instances[i];
                         let clone = model.clone();
                         clone.name = name;
                         clone.scale.set(scale.x, scale.y, scale.z);
                         clone.position.set(position.x, position.y, position.z);
+                        clone.rotation.set(rotation.x, rotation.y, rotation.z);
                         clone.visible = true; // TODO - get from JSON def
                         // log.log(`PARENT: ${parent}`);
                         if (parent) {
@@ -337,15 +343,23 @@ export function createSceneManager(context = {}) {
     });
 
     function teleport() {
-        log.info("### TELEPORTING! ... ###")
-        // teleport();
-        let target = teleportMap[teleportCounter.value].position;
-        if( target ) {
-            dolly.position.set( target.x, target.y, target.z );
+        let cursor = teleportCounter.value;
+
+        let {
+            name = undefined,
+            position = undefined,
+            rotation = undefined,
+        } =  teleportMap[cursor];
+
+        if( name ) {
+            log.info(`teleporting to: ${name}`);
         }
-        let dRot = teleportMap[teleportCounter.value].rotation;
-        if( dRot ) {
-            dolly.rotation.set( dRot.x, dRot.y, dRot.z );
+        
+        if( position ) {
+            dolly.position.set( position.x, position.y, position.z );
+        }
+        if( rotation ) {
+            dolly.rotation.set( rotation.x, rotation.y, rotation.z );
         } else {
             // set default rotation to 0,0,0 when not specified
             dolly.rotation.set( 0.0, 0.0, 0.0 );   
