@@ -52,10 +52,6 @@ export function createSceneManager(context = {}) {
     // Create a ThreeJS camera
     let camera = new THREE.PerspectiveCamera(fov, aspectRatio, near, far);
 
-    // desktop orbit controls
-    // TODO - orbit controls not working when setup for WebXR
-    let controls = new THREE.OrbitControls(camera, renderer.domElement);
-
     context.onSessionStarted = function () {
         log.info('### VR SESSION STARTED');
         isInXR = true;
