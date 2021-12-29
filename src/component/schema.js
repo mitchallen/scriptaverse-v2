@@ -61,6 +61,7 @@ export const scriptaverseSchema = {
                 "properties": {
                     "name": { "type": ["string", "null"] },
                     "position": { "$ref": "#/$defs/vector3" },
+                    "rotation": { "$ref": "#/$defs/vector3" },
                 },
                 "additionalProperties": false
             }

@@ -30,7 +30,7 @@ export function createScriptaverse(context = {}) {
 
         const valid = ajv.validate(schema, input);
         if (!valid) {
-            log.fail(ajv.errors);
+            log.failjson(ajv.errors);
             return [];
         }
 

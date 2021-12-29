@@ -14,6 +14,7 @@ export function createLogger( options = {} ) {
     const warn = (msg) => verbose ? console.warn(wrap(msg)) : false;
     const fail = (msg) => verbose ? console.error(wrap(msg)) : false;
     const json = (obj) => info(JSON.stringify(obj,null,2));
+    const failjson = (obj) => fail(JSON.stringify(obj,null,2));
 
     return {
         log,
@@ -21,6 +22,7 @@ export function createLogger( options = {} ) {
         warn,
         fail,
         json,
+        failjson,
     }
 
 }

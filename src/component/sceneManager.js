@@ -343,6 +343,13 @@ export function createSceneManager(context = {}) {
         if( target ) {
             dolly.position.set( target.x, target.y, target.z );
         }
+        let dRot = teleportMap[teleportCounter.value].rotation;
+        if( dRot ) {
+            dolly.rotation.set( dRot.x, dRot.y, dRot.z );
+        } else {
+            // set default rotation to 0,0,0 when not specified
+            dolly.rotation.set( 0.0, 0.0, 0.0 );   
+        }
         teleportCounter.increment();
     }
 
@@ -420,7 +427,8 @@ export function createSceneManager(context = {}) {
                 }
 
                 // if( node.name === 'dolly') {
-                //     node.position.z += 0.01;
+                //     // node.position.z += 0.01;
+                //     node.rotation.y += 0.01;
                 // }
 
                 if ((node.name === LOAD_INDICATOR || node.name === ERROR_INDICATOR) && node.visible) {
