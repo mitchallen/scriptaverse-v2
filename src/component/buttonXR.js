@@ -1,12 +1,16 @@
 
 import { createLogger } from "./logger.js";
 
+let GOOGLE_CARDBOARD_SPAN = `<span class="material-icons md-dark md-48">
+<object type="image/svg+xml" data="image/google-cardboard.svg"></object>
+</span>`;
+
 export function createButtonXR(renderer, context = {}) {
 
     let log = createLogger(context);
 
     log.log('createButtonXR');
-    
+
     const button = document.createElement('button');
 
     function showEnterVR( /*device*/) {
@@ -16,16 +20,17 @@ export function createButtonXR(renderer, context = {}) {
             renderer.xr.setSession(session);
             button.textContent = 'EXIT VR';
             currentSession = session;
-            if( context.onSessionStarted ) {
+            if (context.onSessionStarted) {
                 context.onSessionStarted();
             }
         }
 
         function onSessionEnded( /*event*/) {
             currentSession.removeEventListener('end', onSessionEnded);
-            button.textContent = 'ENTER VR';
+            // button.textContent = 'ENTER VR';
+            button.innerHTML = GOOGLE_CARDBOARD_SPAN;
             currentSession = null;
-            if( context.onSessionEnded ) {
+            if (context.onSessionEnded) {
                 context.onSessionEnded();
             }
         }
@@ -34,7 +39,8 @@ export function createButtonXR(renderer, context = {}) {
         button.style.cursor = 'pointer';
         button.style.left = 'calc(50% - 50px)';
         button.style.width = '100px';
-        button.textContent = 'ENTER VR';
+        // button.textContent = 'ENTER VR';
+        button.innerHTML = GOOGLE_CARDBOARD_SPAN;
 
         button.onmouseenter = function () {
             button.style.opacity = '1.0';
@@ -82,7 +88,8 @@ export function createButtonXR(renderer, context = {}) {
         element.style.padding = '12px 6px';
         element.style.border = '1px solid #fff';
         element.style.borderRadius = '4px';
-        element.style.background = 'rgba(0,0,0,0.1)';
+        // element.style.background = 'rgba(0,0,0,0.1)';
+        // element.style.background = 'rgba(0,0,0,0.1)';
         element.style.color = '#fff';
         element.style.font = 'normal 13px sans-serif';
         element.style.textAlign = 'center';
