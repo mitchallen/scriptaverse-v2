@@ -66,7 +66,7 @@ export const defaultInput = {
             ]
         },
         {
-            "title": "random-ball-alpha",
+            "title": "thicker-ball",
             "hide": false,
             "teleport": [
                 {
@@ -117,8 +117,8 @@ export const defaultInput = {
             ],
             "nodes": [
                 {
-                    "cid": "QmSkgCyDuqzMzh1eF1kLZkKXX1yq5wviLYpPBHirS1zr89",
-                    "name": "Random Ball Alpha",
+                    "cid": "Qma4XWr9pzjMXgHEACfheDtBRL7jwdSwumaJWKEyHjDCwq",
+                    "name": "Thicker Ball",
                     "mimeType": "model/gltf-binary",
                     "instances": [
                         {
