@@ -1,5 +1,5 @@
 
-export const defaultInput = {
+export const config = {
     "scenes": [
         {
             "title": "clone-iris",
@@ -309,6 +309,82 @@ export const defaultInput = {
                             "scale": { "x": 0.5, "y": 0.5, "z": 0.5 }
                         }
                     ]    
+                }
+            ]
+        },
+        {
+            "title": "fire reactor",
+            "hide": false,
+            "backgroundColor": "#000000",
+            "teleport": [
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -1.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 1.0, "z": -2.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": -1.0, "z": -3.0 },
+                },
+                {
+                    "position": { "x": 1.0, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+                }
+            ],
+            "nodes": [
+                {
+                    "cid": "QmWkGjnZoVRhLs18MHo7DcA1qhPnPPCJiHWgA66yhn3JWD",
+                    "name": "Fire Reactor",
+                    "mimeType": "image/png",
+                    "instances": [
+                        { 
+                            "scale": { "x": 8.0, "y": 8.0, "z": 2.0 },
+                            "position": { "x": 0.0, "y": 0.0, "z": -2.0 }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "gridiculous",
+            "hide": false,
+            "backgroundColor": "#000000",
+            "teleport": [
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -1.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 1.0, "z": -2.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": -1.0, "z": -3.0 },
+                },
+                {
+                    "position": { "x": 1.0, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+                }
+            ],
+            "nodes": [
+                {
+                    "cid": "QmV9MHjzYUn4bSuJtAkXLs4VTA6YNNV7eKCRbE5V5wbjAY",
+                    "name": "Gridiculous",
+                    "mimeType": "image/png",
+                    "instances": [
+                        { 
+                            "scale": { "x": 8.0, "y": 8.0, "z": 0.0 },
+                            "position": { "x": 0.0, "y": 0.0, "z": -2.0 }
+                        }
+                    ]
                 }
             ]
         },

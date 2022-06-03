@@ -1,5 +1,5 @@
 
-import { defaultInput } from "./defaultInput.js";
+import { config } from "./config.js";
 import { scriptaverseSchema } from "./schema.js";
 
 import { createLogger } from "./logger.js";
@@ -19,7 +19,7 @@ export function createScriptaverse(context = {}) {
     function parseInput() {
 
         let {
-            input = defaultInput,
+            input = config,
             schema = scriptaverseSchema,
         } = context;
 
