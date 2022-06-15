@@ -73,12 +73,12 @@ export const scriptaverseSchema = {
             "items": {
                 "type": "object",
                 "properties": {
-                    "cid": { "type": "string" },
+                    "arid": { "type": ["string", "null"] },
+                    "cid": { "type": ["string", "null"] },
                     "mimeType": { "$ref": "#/$defs/mimeType" },
                     "name": { "type": ["string", "null"] },
                     "instances": { "$ref": "#/$defs/instances" },
                 },
-                required: ["cid", "mimeType"],
                 "additionalProperties": false
             }
         }

@@ -29,7 +29,7 @@ export function createSceneManager(context = {}) {
 
     // Setup default values or use context
     let {
-        clear = "#000000",
+        clear = "#222222",
         scenes = [],
         // fov — Camera frustum vertical field of view
         fov = 75,
@@ -140,8 +140,10 @@ export function createSceneManager(context = {}) {
         // const IPFS_GATEWAY = 'https://cloudflare-ipfs.com/ipfs/'; // sometime fails 
         // const IPFS_GATEWAY = 'https://ipfs.io/ipfs/';
         const IPFS_GATEWAY = 'https://ipfs.infura.io/ipfs/';
+        const ARWEAVE_GATEWAY = 'https://arweave.net/';
 
         const ipfsPath = (hash) => `${IPFS_GATEWAY}${hash}`;
+        const arweavePath = (hash) => `${ARWEAVE_GATEWAY}${hash}`;
 
         // Teleport
 
@@ -160,11 +162,12 @@ export function createSceneManager(context = {}) {
             let list = nodes.map(function (el) {
 
                 let {
+                    arid,
                     cid,
                     mimeType,
                 } = el;
 
-                let filepath = cid ? ipfsPath(el.cid) : undefined;
+                let filepath = cid ? ipfsPath(el.cid) : arid ? arweavePath(el.arid) : undefined;
                 return {
                     ...el,
                     filepath,
