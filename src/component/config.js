@@ -63,6 +63,17 @@ export const config = {
                             "scale": { "x": 0.10, "y": 0.10, "z": 0.10 }
                         }
                     ] 
+                },              {
+                    "cid": "QmV7zKSp1GoMAqYkKt9KWu17jHisoH2bi1qFdk6FFnGmyB",
+                    "name": "Maze Cube 9x9x9 Neon Fat",
+                    "mimeType": "model/gltf-binary",
+                    "instances": [
+                        {
+                            "position": { "x": 2.0, "y": 2.0, "z": -2.0 },
+                            "scale": { "x": 0.2, "y": 0.2, "z": 0.2 },
+                            "rotation": { "x": 0.785398, "y": 0.785398, "z":  0.785398 },
+                        }
+                    ]    
                 }
             ]
         },
