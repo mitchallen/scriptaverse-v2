@@ -2,9 +2,74 @@
 export const config = {
     "scenes": [
         {
-            "title": "maze-cube-15x15x15-neon",
+            "title": "maze-cube-9x9x9-neon-fat",
             "hide": false,
             "backgroundColor": "#000000",
+            "teleport": [
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -1.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 1.0, "z": -2.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -3.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": -1.0, "z": -3.0 },
+                },
+                {
+                    "position": { "x": -1.0, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": -0.5, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": 0.5, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": 1.0, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": -1.0, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": -0.5, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 0.5, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 1.0, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+                }
+            ],
+            "nodes": [
+                {
+                    "cid": "QmV7zKSp1GoMAqYkKt9KWu17jHisoH2bi1qFdk6FFnGmyB",
+                    "name": "Maze Cube 9x9x9 Neon Fat",
+                    "mimeType": "model/gltf-binary",
+                    "instances": [
+                        {
+                            "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+                            "scale": { "x": 0.4, "y": 0.4, "z": 0.4 },
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "maze-cube-15x15x15-neon",
+            "hide": false,
+            "backgroundColor": "#444444",
             "teleport": [
                 {
                     "position": { "x": 0.0, "y": 0.0, "z": -1.0 },
@@ -62,18 +127,7 @@ export const config = {
                             "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
                             "scale": { "x": 0.10, "y": 0.10, "z": 0.10 }
                         }
-                    ] 
-                },              {
-                    "cid": "QmV7zKSp1GoMAqYkKt9KWu17jHisoH2bi1qFdk6FFnGmyB",
-                    "name": "Maze Cube 9x9x9 Neon Fat",
-                    "mimeType": "model/gltf-binary",
-                    "instances": [
-                        {
-                            "position": { "x": 2.0, "y": 2.0, "z": -2.0 },
-                            "scale": { "x": 0.2, "y": 0.2, "z": 0.2 },
-                            "rotation": { "x": 0.785398, "y": 0.785398, "z":  0.785398 },
-                        }
-                    ]    
+                    ]
                 }
             ]
         },
@@ -138,7 +192,7 @@ export const config = {
                             "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
                             "scale": { "x": 0.10, "y": 0.10, "z": 0.10 }
                         }
-                    ] 
+                    ]
                 }
             ]
         },
@@ -204,7 +258,7 @@ export const config = {
                             "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
                             "scale": { "x": 0.10, "y": 0.10, "z": 0.10 }
                         }
-                    ] 
+                    ]
                 }
             ]
         },
@@ -268,7 +322,7 @@ export const config = {
                             "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
                             "scale": { "x": 0.5, "y": 0.5, "z": 0.5 }
                         }
-                    ] 
+                    ]
                 }
             ]
         },
@@ -332,7 +386,7 @@ export const config = {
                             "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
                             "scale": { "x": 0.5, "y": 0.5, "z": 0.5 }
                         }
-                    ] 
+                    ]
                 }
             ]
         },
@@ -369,7 +423,7 @@ export const config = {
                             "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
                             "scale": { "x": 0.5, "y": 0.5, "z": 0.5 }
                         }
-                    ] 
+                    ]
                 }
             ]
         },
@@ -406,7 +460,7 @@ export const config = {
                             "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
                         }
                     ]
-                    
+
                 },
                 {
                     "cid": "QmUoZ3dZYBgcr8nfirkVcttUCpgJzuKTLMokHhfcg6nEwY",
@@ -416,7 +470,7 @@ export const config = {
                         {
                             "scale": { "x": 0.5, "y": 0.5, "z": 0.5 }
                         }
-                    ] 
+                    ]
                 }
             ]
         },
@@ -442,7 +496,7 @@ export const config = {
                 },
                 {
                     "name": "T4",
-                    "position": { "x": 0.0, "y": 0.0, "z": 0.0 },  
+                    "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
                 }
             ],
             "nodes": [
@@ -455,7 +509,7 @@ export const config = {
                             "scale": { "x": 0.4, "y": 0.4, "z": 0.4 },
                         }
                     ]
-                    
+
                 },
                 {
                     "cid": "Qmck1wi5hCErdreYLzjYKn6SCuRtHX7Gv4AFGXJe3qRogo",
@@ -465,11 +519,11 @@ export const config = {
                         {
                             "position": { "x": 2.0, "y": 2.0, "z": -2.0 },
                             "scale": { "x": 0.2, "y": 0.2, "z": 0.2 },
-                            "rotation": { "x": 0.785398, "y": 0.785398, "z":  0.785398 },
+                            "rotation": { "x": 0.785398, "y": 0.785398, "z": 0.785398 },
                         }
-                    ]    
+                    ]
                 }
-                
+
             ]
         },
         {
@@ -502,7 +556,7 @@ export const config = {
                     "name": "Gray Beta",
                     "mimeType": "image/png",
                     "instances": [
-                        { 
+                        {
                             "scale": { "x": 12.0, "y": 3.375, "z": 0.0 },
                             "position": { "x": 0.0, "y": 0.0, "z": -2.0 }
                         }
@@ -516,7 +570,7 @@ export const config = {
                         {
                             "scale": { "x": 0.5, "y": 0.5, "z": 0.5 }
                         }
-                    ]    
+                    ]
                 }
             ]
         },
@@ -550,7 +604,7 @@ export const config = {
                     "name": "Fire Reactor",
                     "mimeType": "image/png",
                     "instances": [
-                        { 
+                        {
                             "scale": { "x": 8.0, "y": 8.0, "z": 2.0 },
                             "position": { "x": 0.0, "y": 0.0, "z": -2.0 }
                         }
@@ -588,7 +642,7 @@ export const config = {
                     "name": "Gridiculous",
                     "mimeType": "image/png",
                     "instances": [
-                        { 
+                        {
                             "scale": { "x": 8.0, "y": 8.0, "z": 0.0 },
                             "position": { "x": 0.0, "y": 0.0, "z": -2.0 }
                         }
