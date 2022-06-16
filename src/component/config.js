@@ -4,6 +4,7 @@ export const config = {
         {
             "title": "maze-cube-17x17x17-beta",
             "hide": false,
+            "backgroundColor": "#AAAAAA",
             "teleport": [
                 {
                     "position": { "x": 0.0, "y": 0.0, "z": -1.0 },
@@ -281,6 +282,7 @@ export const config = {
         {
             "title": "Maze 3x3x3 alpha x 2",
             "hide": false,
+            "backgroundColor": "#AAAAAA",
             "teleport": [
                 {
                     "name": "T1",
@@ -332,7 +334,7 @@ export const config = {
         {
             "title": "gray beta maze cube",
             "hide": false,
-            "backgroundColor": "#000000",
+            "backgroundColor": "#AAAAAA",
             "teleport": [
                 {
                     "position": { "x": 0.0, "y": 0.0, "z": -1.0 },

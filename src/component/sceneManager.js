@@ -19,6 +19,8 @@ const ROOT_NAME = 'root';
 
 export function createSceneManager(context = {}) {
 
+    let DEFAULT_BACKGROUND_COLOR = "#222222"
+
     let log = createLogger(context);
 
     let isInXR = false;
@@ -29,7 +31,7 @@ export function createSceneManager(context = {}) {
 
     // Setup default values or use context
     let {
-        clear = "#222222",
+        clear = DEFAULT_BACKGROUND_COLOR,
         scenes = [],
         // fov — Camera frustum vertical field of view
         fov = 75,
@@ -145,6 +147,13 @@ export function createSceneManager(context = {}) {
         const ipfsPath = (hash) => `${IPFS_GATEWAY}${hash}`;
         const arweavePath = (hash) => `${ARWEAVE_GATEWAY}${hash}`;
 
+        let {
+            backgroundColor = "#000000",
+        } = currentScene;
+
+        // renderer.setClearColor( 0x0000FF );
+        scene.background = new THREE.Color( backgroundColor );
+
         // Teleport
 
         teleportMap = currentScene.teleport ? currentScene.teleport : [];
@@ -194,6 +203,7 @@ export function createSceneManager(context = {}) {
                 // position = { x: 0, y: 0, z: 0 },
                 // scale = { x: 1, y: 1, z: 1 },
             } = nodeList[i];
+
 
             // log.log(mimeType, filepath);
 
