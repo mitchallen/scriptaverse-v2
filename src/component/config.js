@@ -2,6 +2,136 @@
 export const config = {
     "scenes": [
         {
+            "title": "maze-wireframe-30x30x30-neon-green.",
+            "hide": false,
+            "backgroundColor": "#000000",
+            "teleport": [
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -1.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 1.0, "z": -2.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -3.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": -1.0, "z": -3.0 },
+                },
+                {
+                    "position": { "x": -1.0, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": -0.5, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": 0.5, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": 1.0, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": -1.0, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": -0.5, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 0.5, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 1.0, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+                }
+            ],
+            "nodes": [
+                {
+                    "cid": "Qmdrqj17UoyxritJmJdzpcR8Uwep3iiB631D1QtvHTcyTb",
+                    "name": "Maze Wire Frame 30x30x30 Neon Green",
+                    "mimeType": "model/gltf-binary",
+                    "instances": [
+                        {
+                            "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+                            "scale": { "x": 0.05, "y": 0.05, "z": 0.05 },
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "maze-wireframe-11x11-11-neon-green.",
+            "hide": false,
+            "backgroundColor": "#000000",
+            "teleport": [
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -1.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 1.0, "z": -2.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -3.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": -1.0, "z": -3.0 },
+                },
+                {
+                    "position": { "x": -1.0, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": -0.5, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": 0.5, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": 1.0, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": -1.0, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": -0.5, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 0.5, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 1.0, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+                }
+            ],
+            "nodes": [
+                {
+                    "cid": "QmR9CHuBqoHf93mPFs7dg2j9Ea9DG3bwuTNyUTQpjKQgMs",
+                    "name": "Maze Wire Frame 11x11x11 Neon Green",
+                    "mimeType": "model/gltf-binary",
+                    "instances": [
+                        {
+                            "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+                            "scale": { "x": 0.1, "y": 0.1, "z": 0.1 },
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "title": "maze-cube-9x9x9-neon-fat",
             "hide": false,
             "backgroundColor": "#000000",
