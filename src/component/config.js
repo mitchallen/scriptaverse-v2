@@ -2,7 +2,72 @@
 export const config = {
     "scenes": [
         {
-            "title": "maze-wireframe-30x30x30-neon-green.",
+            "title": "candy-tangle",
+            "hide": false,
+            "backgroundColor": "#000000",
+            "teleport": [
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -1.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 1.0, "z": -2.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -3.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": -1.0, "z": -3.0 },
+                },
+                {
+                    "position": { "x": -1.0, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": -0.5, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": 0.5, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": 1.0, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": -1.0, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": -0.5, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 0.5, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 1.0, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+                }
+            ],
+            "nodes": [
+                {
+                    "cid": "QmSJutDSgtvjvgd4FvVLBHgUFmpGz6LRUx7ogdPEcAMM8Q",
+                    "name": "Candy Tangle",
+                    "mimeType": "model/gltf-binary",
+                    "instances": [
+                        {
+                            "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+                            "scale": { "x": 0.75, "y": 0.75, "z": 0.75 },
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "maze-wireframe-30x30x30-neon-green",
             "hide": false,
             "backgroundColor": "#000000",
             "teleport": [

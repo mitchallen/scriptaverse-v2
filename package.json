@@ -5,7 +5,8 @@
   "main": "src/index.html",
   "homepage": ".",
   "scripts": {
-    "start": "open http://localhost:8000",
+    "prestart": "open http://localhost:8000",
+    "start": "cd src; python -m SimpleHTTPServer $PORT || 8000",
     "mac:server": "cd src; python -m SimpleHTTPServer $PORT || 8000",
     "inuse": "lsof -i :8000"
   },
