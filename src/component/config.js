@@ -2,6 +2,117 @@
 export const config = {
     "scenes": [
         {
+            "title": "maze-cubes-3x6x9",
+            "hide": false,
+            "backgroundColor": "#000000",
+            "teleport": [
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -1.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 1.0, "z": -2.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -3.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": -1.0, "z": -3.0 },
+                },
+                {
+                    "position": { "x": -1.0, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": -0.5, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": 0.5, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": 1.0, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": -1.0, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": -0.5, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 0.5, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 1.0, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+                }
+            ],
+            "nodes": [
+                {
+                    "cid": "QmVj3DVszFypdpDbsjJgQ4apUyCoYAUjYnekrQbN2bUB2n",
+                    "name": "Maze Cube 3x6x9 Red",
+                    "mimeType": "model/gltf-binary",
+                    "instances": [
+                        {
+                            "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+                            "scale": { "x": 0.1, "y": 0.1, "z": 0.1 },
+                        }
+                    ]
+                },
+                {
+                    "cid": "QmawJWLmxD2rHTE8s6TC5XqFWj3WH8nx9wy5YjP5LkpxkS",
+                    "name": "Maze Cube 3x6x9 Neon Pink",
+                    "mimeType": "model/gltf-binary",
+                    "instances": [
+                        {
+                            "position": { "x": -2.0, "y": 0.0, "z": 0.0 },
+                            "scale": { "x": 0.1, "y": 0.1, "z": 0.1 },
+                        }
+                    ]
+                },
+                {
+                    "cid": "QmXZ6i5NuLhXDMG8CXjJzoTKBo38UaoRfSCzki7YEpdr3d",
+                    "name": "Maze Cube 3x6x9 White",
+                    "mimeType": "model/gltf-binary",
+                    "instances": [
+                        {
+                            "position": { "x": 2.0, "y": 0.0, "z": 0.0 },
+                            "scale": { "x": 0.1, "y": 0.1, "z": 0.1 },
+                        }
+                    ]
+                },
+                {
+                    "cid": "QmU8XoaJTXdY1zKT721hBjKfgs6zrYh3bnYfQL252pFZhH",
+                    "name": "Maze Cube 3x6x9 Cyan",
+                    "mimeType": "model/gltf-binary",
+                    "instances": [
+                        {
+                            "position": { "x": 0.0, "y": 0.0, "z": 2.0 },
+                            "scale": { "x": 0.1, "y": 0.1, "z": 0.1 },
+                        }
+                    ]
+                },
+                {
+                    "cid": "QmYXLeNizPiddJxd8G8b5gCzBP7Bfcu9yLYxLSbQzJUFYB",
+                    "name": "Maze Cube 3x6x9 Neon Green",
+                    "mimeType": "model/gltf-binary",
+                    "instances": [
+                        {
+                            "position": { "x": 0.0, "y": 0.0, "z": -2.0 },
+                            "scale": { "x": 0.1, "y": 0.1, "z": 0.1 },
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+        {
             "title": "candy-tangle",
             "hide": false,
             "backgroundColor": "#000000",
