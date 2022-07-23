@@ -2,6 +2,72 @@
 export const config = {
     "scenes": [
 
+              {
+            "title": "candy-ball",
+            "hide": false,
+            "backgroundColor": "#000000",
+            "teleport": [
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -1.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 1.0, "z": -2.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -3.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": -1.0, "z": -3.0 },
+                },
+                {
+                    "position": { "x": -1.0, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": -0.5, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": 0.5, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": 1.0, "y": 0.0, "z": -4.0 },
+                },
+                {
+                    "position": { "x": -1.0, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": -0.5, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 0.5, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 1.0, "y": 0.0, "z": -5.0 },
+                },
+                {
+                    "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+                }
+            ],
+            "nodes": [
+                {
+                    "cid": "QmcMayXKpAC7do1kqdY61wWfd8wxKRFiA7QVS11UX9iA4Z",
+                    "name": "candy-ball",
+                    "mimeType": "model/gltf-binary",
+                    "instances": [
+                        {
+                            "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+                            "scale": { "x": 1.0, "y": 1.0, "z": 1.0 },
+                        }
+                    ]
+                }
+            ]
+        },
+
 
         {
             "title": "maze-15x15x15-bw",
