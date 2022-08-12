@@ -139,9 +139,9 @@ export function createSceneManager(context = {}) {
         let currentScene = random ? pickOne(scenes) : scenes[sceneCounter.increment()];
 
         // See: https://luke.lol/ipfs.php
-        // const IPFS_GATEWAY = 'https://cloudflare-ipfs.com/ipfs/'; // sometime fails 
+        const IPFS_GATEWAY = 'https://cloudflare-ipfs.com/ipfs/'; // sometime fails 
         // const IPFS_GATEWAY = 'https://ipfs.io/ipfs/';
-        const IPFS_GATEWAY = 'https://ipfs.infura.io/ipfs/';
+        // const IPFS_GATEWAY = 'https://ipfs.infura.io/ipfs/';
         const ARWEAVE_GATEWAY = 'https://arweave.net/';
 
         const ipfsPath = (hash) => `${IPFS_GATEWAY}${hash}`;
@@ -292,6 +292,14 @@ export function createSceneManager(context = {}) {
                             indicator.visible = false;
                         }
                         busy = false; // turn off busy flag
+                    },
+                    (progress) => { console.log("[onProgress]", progress) },
+                    (err) => { 
+                        console.log("[onError]", err);
+                        if (indicator) {
+                            indicator.visible = false;
+                        }
+                        busy = false; // turn off busy flag 
                     }
 
                 );
@@ -301,6 +309,7 @@ export function createSceneManager(context = {}) {
                 // GLB files
                 let loader = new THREE.GLTFLoader();
                 loader.load(filepath, (gltf) => {
+                    
                     let model = gltf.scene;
                     model.visible = false;
 
@@ -339,7 +348,16 @@ export function createSceneManager(context = {}) {
                         indicator.visible = false;
                     }
                     busy = false; // turn off busy flag
-                });
+                },
+                    (progress) => { console.log("[onProgress]", progress) },
+                    (err) => { 
+                        console.log("[onError]", err);
+                        if (indicator) {
+                            indicator.visible = false;
+                        }
+                        busy = false; // turn off busy flag 
+                    }
+                );
             }
 
         }
