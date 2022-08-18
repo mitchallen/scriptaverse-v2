@@ -138,10 +138,13 @@ export function createSceneManager(context = {}) {
 
         let currentScene = random ? pickOne(scenes) : scenes[sceneCounter.increment()];
 
-        // See: https://luke.lol/ipfs.php
-        const IPFS_GATEWAY = 'https://cloudflare-ipfs.com/ipfs/'; // sometime fails 
+        // See: https://ipnso-com.ipns.dweb.link/
+        //  or: https://luke.lol/ipfs.php
+        const IPFS_GATEWAY = 'https://ipfs.fleek.co/ipfs/';
+        // const IPFS_GATEWAY = 'https://gateway.pinata.cloud/ipfs/';
+        // const IPFS_GATEWAY = 'https://gateway.ipfs.io/ipfs/';
+        // const IPFS_GATEWAY = 'https://cloudflare-ipfs.com/ipfs/'; // sometime fails 
         // const IPFS_GATEWAY = 'https://ipfs.io/ipfs/';
-        // const IPFS_GATEWAY = 'https://ipfs.infura.io/ipfs/';
         const ARWEAVE_GATEWAY = 'https://arweave.net/';
 
         const ipfsPath = (hash) => `${IPFS_GATEWAY}${hash}`;
