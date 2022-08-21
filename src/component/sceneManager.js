@@ -19,6 +19,8 @@ const ROOT_NAME = 'root';
 
 export function createSceneManager(context = {}) {
 
+    const HELP_URL = 'https://doc.scriptaverse.com'
+
     let DEFAULT_BACKGROUND_COLOR = "#222222"
 
     let log = createLogger(context);
@@ -375,6 +377,10 @@ export function createSceneManager(context = {}) {
 
     document.getElementById('btnNext').addEventListener('click', function () {
         loadNextScene( false );
+    });
+
+    document.getElementById('btnHelp').addEventListener('click', function () {
+        window.open(HELP_URL, '_blank');
     });
 
     function teleport() {
