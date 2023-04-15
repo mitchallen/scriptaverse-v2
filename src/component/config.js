@@ -1145,6 +1145,7 @@ export const config = {
             "nodes": [
                 {
                     "cid": "QmV9MHjzYUn4bSuJtAkXLs4VTA6YNNV7eKCRbE5V5wbjAY",
+                    "dweb": "bafybeidfds4p5vykmepoa3l66gyrlc3qagrbuetmxssj35pfwuwyveonie",
                     "name": "Gridiculous",
                     "mimeType": "image/png",
                     "instances": [
