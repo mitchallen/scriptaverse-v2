@@ -150,7 +150,8 @@ export function createSceneManager(context = {}) {
         const ARWEAVE_GATEWAY = 'https://arweave.net/';
 
         const ipfsPath = (hash) => `${IPFS_GATEWAY}${hash}`;
-        const dwebPath = (hash) => `https://${hash}.ipfs.dweb.link/`;
+        // https://cid.ipfs.tech/
+        const cidV1Path = (hash) => `https://${hash}.ipfs.dweb.link/`;
         const arweavePath = (hash) => `${ARWEAVE_GATEWAY}${hash}`;
 
         let {
@@ -179,11 +180,11 @@ export function createSceneManager(context = {}) {
                 let {
                     arid,
                     cid,
-                    dweb,
+                    cidv1,
                     mimeType,
                 } = el;
 
-                let filepath = dweb ? dwebPath(el.dweb) : cid ? ipfsPath(el.cid) : arid ? arweavePath(el.arid) : undefined;
+                let filepath = cidv1 ? cidV1Path(el.cidv1) : cid ? ipfsPath(el.cid) : arid ? arweavePath(el.arid) : undefined;
                 return {
                     ...el,
                     filepath,
