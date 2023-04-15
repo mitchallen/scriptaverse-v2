@@ -74,6 +74,7 @@ export const scriptaverseSchema = {
                 "type": "object",
                 "properties": {
                     "arid": { "type": ["string", "null"] },
+                    "dweb": { "type": ["string", "null"] },
                     "cid": { "type": ["string", "null"] },
                     "mimeType": { "$ref": "#/$defs/mimeType" },
                     "name": { "type": ["string", "null"] },
