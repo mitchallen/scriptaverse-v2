@@ -60,8 +60,3 @@ Example **scenes** entry in **config.js**:
 * https://google.github.io/material-design-icons/
 * https://fonts.google.com/icons?selected=Material+Icons
 * https://materialdesignicons.com/icon/google-cardboard - original Google Cardboard image
-
-
-
-
-
