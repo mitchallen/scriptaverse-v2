@@ -142,7 +142,8 @@ export function createSceneManager(context = {}) {
 
         // See: https://ipnso-com.ipns.dweb.link/
         //  or: https://luke.lol/ipfs.php
-        const IPFS_GATEWAY = 'https://ipfs.fleek.co/ipfs/';
+        const IPFS_GATEWAY = 'https://olive-flying-parrotfish-580.mypinata.cloud/ipfs/'
+        // const IPFS_GATEWAY = 'https://ipfs.fleek.co/ipfs/';
         // const IPFS_GATEWAY = 'https://gateway.pinata.cloud/ipfs/';
         // const IPFS_GATEWAY = 'https://gateway.ipfs.io/ipfs/';
         // const IPFS_GATEWAY = 'https://cloudflare-ipfs.com/ipfs/'; // sometime fails 
@@ -185,6 +186,7 @@ export function createSceneManager(context = {}) {
                 } = el;
 
                 let filepath = cidv1 ? cidV1Path(el.cidv1) : cid ? ipfsPath(el.cid) : arid ? arweavePath(el.arid) : undefined;
+                console.log(filepath)
                 return {
                     ...el,
                     filepath,
