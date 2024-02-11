@@ -3,6 +3,65 @@ export const config = {
     "scenes": [
 
         {
+            "title": "Tetrahedron",
+            "hide": false,
+            "backgroundColor": "#000000",
+            "teleport": [
+                {
+                    "name": "T1",
+                    "position": { "x": 0.0, "y": -3.0, "z": -5.0 },
+                    "rotation": { "x": 1.5707963268, "y": 0.0, "z": 0.0 },
+                },
+                {
+                    "name": "T2",
+                    "position": { "x": 0.0, "y": 3.0, "z": -5.0 },
+                    "rotation": { "x": -1.5707963268, "y": 0.0, "z": 0.0 },
+                },
+                {
+                    "name": "T3",
+                    "position": { "x": 0.0, "y": 0.0, "z": -10.0 },
+                    "rotation": { "x": 0.0, "y": 3.14159265359, "z": 0.0 },
+                },
+                {
+                    "name": "T4",
+                    "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+                }
+            ],
+            "nodes": [
+                {
+                    "cid": "QmXWipJn3s97mkoEqH7ENAo3w7vzJVMuG2GYdHj311EA54",
+                    "name": "tetrahedron-centered",
+                    "mimeType": "model/gltf-binary",
+                    "instances": [
+                        {
+                            "scale": { "x": 2.0, "y": 2.0, "z": 2.0 },
+                        }
+                    ]
+                },
+                {
+                    "cid": "QmXWipJn3s97mkoEqH7ENAo3w7vzJVMuG2GYdHj311EA54",
+                    "name": "tetrahedron-centered",
+                    "mimeType": "model/gltf-binary",
+                    "instances": [
+                        {
+                            "scale": { "x": 1.0, "y": 1.0, "z": 1.0 },
+                        }
+                    ]
+                },
+                {
+                    "cid": "QmTvLsjriPDSb3hzRkiJaT4MsYSUF2y9AENABy6R9rnfgW",
+                    "name": "tetrahedron-corner",
+                    "mimeType": "model/gltf-binary",
+                    "instances": [
+                        {
+                            "scale": { "x": 2.0, "y": 2.0, "z": 2.0 },
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
             "title": "hollow-candy-ball",
             "hide": false,
             "backgroundColor": "#000000",
