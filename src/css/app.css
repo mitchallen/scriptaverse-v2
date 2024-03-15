@@ -69,9 +69,22 @@ canvas {
 }
 
 .button-toolbar {
+  background-color: transparent;
   cursor: pointer; 
+  margin-top: 5px;
+  border-radius: 10px;
+  border: 2px solid darkgray;
 }
 
 .button-toolbar:hover {
-  background-color: white;
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+/* Increase button size for smaller screens */
+@media (max-width: 600px) {
+  .button-toolbar {
+      padding: 15px 30px;
+      font-size: 18px;
+  }
 }
