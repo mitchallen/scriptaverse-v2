@@ -9,6 +9,7 @@ canvas {
 
 .buttonBar {
   position: absolute;
+  margin-left: 10px;
   /* font-size: 20px;
     width: 10%;
     height: 5%;
