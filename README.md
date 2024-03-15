@@ -9,9 +9,22 @@
 
 ## Files
 
-If you clone this site, remove this file:
+If you clone this site, remove this file (if found):
 
 * src/.well-known/brave-rewards-verification.txt
+
+## Google Analytics
+
+Here is how to setup Google Analytics if your site is being deploy by a static host CI, like Netlify:
+
+1. Create a new property for your site in Google Analytics
+2. Create a variable called **VAR_GTAG** with the value of your tag (**G-...**) 
+3. Add this as a build step before your site is deployed:
+```sh
+sed -i "s/VAR_GTAG/${VAR_GTAG}/g" src/index.html
+```
+
+Or you can take the whole block out of the header in src/index.html
 
 ## How to use your own 3D objects
 
