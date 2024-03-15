@@ -82,7 +82,7 @@ canvas {
 }
 
 /* Increase button size for smaller screens */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .button-toolbar {
       padding: 15px 30px;
       font-size: 18px;
