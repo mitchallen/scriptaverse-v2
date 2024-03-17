@@ -998,7 +998,6 @@ export const config = {
             "nodes": [
                 {
                     "cid": "QmUoZ3dZYBgcr8nfirkVcttUCpgJzuKTLMokHhfcg6nEwY",
-                    "cidv1": "bafybeidabjtft5uqtqesmrmxlzqxiqoeyg6ztmxkrelppo4dvrddkf7ku4",
                     "name": "Marble Alpha",
                     "mimeType": "model/gltf-binary",
                     "instances": [
@@ -1087,7 +1086,6 @@ export const config = {
             "nodes": [
                 {
                     "cid": "Qmck1wi5hCErdreYLzjYKn6SCuRtHX7Gv4AFGXJe3qRogo",
-                    "cidv1": "bafybeigv776exuvpn75ujtrt6mo6ldhls7gnmzlmqlqdg2dixqxtvdyfhq",
                     "name": "Maze Cube 3x3x3 Alpha",
                     "mimeType": "model/gltf-binary",
                     "instances": [

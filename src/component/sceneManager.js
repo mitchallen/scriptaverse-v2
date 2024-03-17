@@ -106,7 +106,7 @@ export function createSceneManager(context = {}) {
 
     let sceneCounter = createZeroBasedCounter( { limit: scenes.length });
 
-    function loadNextScene( random = false ) {
+    function loadNextScene( random = true ) {
 
         if (busy) return;
 
