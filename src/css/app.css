@@ -17,8 +17,6 @@ canvas {
     margin-left: 1%; */
 }
 
-;
-
 .btnHome {
   font-size: 20px;
   background-color: #4CAF50;
@@ -33,12 +31,6 @@ canvas {
   border: 5px solid red;
 }
 
-#musicFrame {
-  display: none; /* Initially hide the iframe */
-  width: 100%;
-  /* height: 300px; */
-  border: 1px solid #000;
-}
 
 /* Rules for sizing the icon. */
 .material-icons.md-18 {
