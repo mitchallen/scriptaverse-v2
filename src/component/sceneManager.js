@@ -413,6 +413,11 @@ export function createSceneManager(context = {}) {
         teleportCounter.increment();
     }
 
+    document.getElementById('btnMusic').addEventListener('click', function () {
+        let iframe = document.getElementById('musicFrame');
+        iframe.style.display = (iframe.style.display === 'none') ? 'block' : 'none';
+    });
+
     document.getElementById('btnTeleport').addEventListener('click', function () {
         teleport();
     });
