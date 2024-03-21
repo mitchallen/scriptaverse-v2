@@ -1,9 +1,9 @@
-# scriptaverse-v2
+# xrhydra-v1
 --
 
 # Example
 
-* https://scriptaverse.com
+* https://xrhydra.com
 
 # Cloning:
 
