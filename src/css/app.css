@@ -68,7 +68,7 @@ canvas {
 }
 
 .button-toolbar {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
   cursor: pointer;
   margin-top: 5px;
   border-radius: 10px;
@@ -76,7 +76,7 @@ canvas {
 }
 
 .button-toolbar:hover {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.5);
   border: 2px solid white;
 }
 
