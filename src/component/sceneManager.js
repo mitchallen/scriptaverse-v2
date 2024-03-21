@@ -19,7 +19,7 @@ const ROOT_NAME = 'root';
 
 export function createSceneManager(context = {}) {
 
-    const HELP_URL = 'https://doc.xrhydra.com'
+    const HELP_URL = 'https://doc.scriptaverse.com'
 
     let DEFAULT_BACKGROUND_COLOR = "#222222"
 

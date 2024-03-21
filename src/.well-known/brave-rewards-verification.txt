@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: scriptaverse.com
+Token: d57662772dddbd2a35b68906540521bcb1ea6a1febb4176a2dbefafb47ca55d1
