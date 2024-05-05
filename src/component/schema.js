@@ -26,6 +26,7 @@ export const scriptaverseSchema = {
             "enum": [
                 "x-node/group",
                 "image/png",
+                "image/jpeg",
                 "model/gltf-binary"
             ]
         },

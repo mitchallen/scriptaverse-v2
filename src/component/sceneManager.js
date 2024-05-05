@@ -258,7 +258,7 @@ export function createSceneManager(context = {}) {
 
             }
 
-            if (mimeType === 'image/png') {
+            if (mimeType === 'image/png' || mimeType === 'image/jpeg' ) {
                 let loader = new THREE.TextureLoader();
 
                 //allow cross origin loading
