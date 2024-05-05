@@ -73,6 +73,7 @@ export const scriptaverseSchema = {
             "items": {
                 "type": "object",
                 "properties": {
+                    "file": { "type": ["string", "null"] },
                     "arid": { "type": ["string", "null"] },
                     "cidv1": { "type": ["string", "null"] },
                     "cid": { "type": ["string", "null"] },

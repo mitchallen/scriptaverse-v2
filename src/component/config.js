@@ -29,8 +29,9 @@ export const config = {
             ],
             "nodes": [
                 {
-                    "cid": "QmXWipJn3s97mkoEqH7ENAo3w7vzJVMuG2GYdHj311EA54",
                     "name": "tetrahedron-centered",
+                    "file": "tetrahedron-centered.glb",
+                    "cid": "QmXWipJn3s97mkoEqH7ENAo3w7vzJVMuG2GYdHj311EA54",
                     "mimeType": "model/gltf-binary",
                     "instances": [
                         {
@@ -39,8 +40,9 @@ export const config = {
                     ]
                 },
                 {
-                    "cid": "QmXWipJn3s97mkoEqH7ENAo3w7vzJVMuG2GYdHj311EA54",
                     "name": "tetrahedron-centered",
+                    "file": "tetrahedron-centered.glb",
+                    "cid": "QmXWipJn3s97mkoEqH7ENAo3w7vzJVMuG2GYdHj311EA54",
                     "mimeType": "model/gltf-binary",
                     "instances": [
                         {
@@ -49,8 +51,9 @@ export const config = {
                     ]
                 },
                 {
-                    "cid": "QmTvLsjriPDSb3hzRkiJaT4MsYSUF2y9AENABy6R9rnfgW",
                     "name": "tetrahedron-corner",
+                    "file": "tetrahedron-corner.glb",
+                    "cid": "QmTvLsjriPDSb3hzRkiJaT4MsYSUF2y9AENABy6R9rnfgW",
                     "mimeType": "model/gltf-binary",
                     "instances": [
                         {

@@ -150,6 +150,7 @@ export function createSceneManager(context = {}) {
         // const IPFS_GATEWAY = 'https://ipfs.io/ipfs/';
         const ARWEAVE_GATEWAY = 'https://arweave.net/';
 
+        const localPath = (file) => `models/${file}`;
         const ipfsPath = (hash) => `${IPFS_GATEWAY}${hash}`;
         // https://cid.ipfs.tech/
         const cidV1Path = (hash) => `https://${hash}.ipfs.dweb.link/`;
@@ -179,14 +180,15 @@ export function createSceneManager(context = {}) {
             let list = nodes.map(function (el) {
 
                 let {
+                    file,
                     arid,
                     cid,
                     cidv1,
                     mimeType,
                 } = el;
 
-                let filepath = cidv1 ? cidV1Path(el.cidv1) : cid ? ipfsPath(el.cid) : arid ? arweavePath(el.arid) : undefined;
-                console.log(filepath)
+                let filepath = file ? localPath(el.file) : cidv1 ? cidV1Path(el.cidv1) : cid ? ipfsPath(el.cid) : arid ? arweavePath(el.arid) : undefined;
+                console.log(`LOADING: ${filepath}`)
                 return {
                     ...el,
                     filepath,
