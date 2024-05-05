@@ -29,12 +29,6 @@ open -a docker
 
 # Cloning:
 
-## Files
-
-If you clone this site, remove this file (if found):
-
-* src/.well-known/brave-rewards-verification.txt
-
 ## Google Analytics
 
 Here is how to setup Google Analytics if your site is deployed by a static host CI, like Netlify:
