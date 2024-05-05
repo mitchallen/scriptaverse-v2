@@ -1,6 +1,12 @@
 # scriptaverse-v2
 --
 
+# Usage
+
+```sh
+make
+```
+
 # Example
 
 * https://scriptaverse.com
@@ -15,7 +21,7 @@ If you clone this site, remove this file (if found):
 
 ## Google Analytics
 
-Here is how to setup Google Analytics if your site is being deploy by a static host CI, like Netlify:
+Here is how to setup Google Analytics if your site is deployed by a static host CI, like Netlify:
 
 1. Create a new property for your site in Google Analytics
 2. Create a variable called **VAR_GTAG** with the value of your tag (**G-...**) 

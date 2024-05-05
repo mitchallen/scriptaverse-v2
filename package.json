@@ -5,9 +5,7 @@
   "main": "src/index.html",
   "homepage": ".",
   "scripts": {
-    "prestart": "open http://localhost:8000",
-    "start": "cd src; python3 -m http.server $PORT || 8000",
-    "mac:server": "cd src; python3 -m http.server $PORT || 8000",
+    "start": "make",
     "inuse": "lsof -i :8000"
   },
   "keywords": ["xr", "webxr", "vr", "virtual reality", "metaverse"],
