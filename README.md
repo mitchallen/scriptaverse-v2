@@ -7,6 +7,22 @@
 make
 ```
 
+# Dev Container
+
+To use inside a VS Code dev container:
+
+1. Start docker
+
+On a Mac you can start docker with this command:
+
+```sh
+open -a docker
+```
+
+2. Start VS Code in your project file (**code .**)
+3. Click the **Reopen in Container** button when it appears
+4. Open the Terminal window inside VS Code
+
 # Example
 
 * https://scriptaverse.com
